@@ -1,3 +1,18 @@
-Testing
+<html>
+	<head>
+		<title>Simple JS text unique counter</title>
+		<script type="text/javascript">
+			var count = {};
 
-Removed Previous change
+			var array = "The cat sat on the mat. The mat was blue."
+				.replace(".", "")
+				.toLocaleLowerCase()
+				.split(" ")
+				.forEach(function (i) {
+					count[i] = (count[i] || 0) + 1;
+				});
+			console.log(count);
+		</script>
+	</head>
+	<body></body>
+</html>
