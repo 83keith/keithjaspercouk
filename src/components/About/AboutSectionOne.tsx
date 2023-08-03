@@ -7,13 +7,17 @@ const checkIcon = (
   </svg>
 );
 
+type AboutSectionOneProps = {
+  desc: string;
+};
+
 const AboutSectionOne = () => {
-  const List = ({ text="" }) => (
+  const List = ({ desc }: AboutSectionOneProps) => (
     <p className="mb-5 flex items-center text-lg font-medium text-body-color">
       <span className="mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
         {checkIcon}
       </span>
-      {text}
+      {desc}
     </p>
   );
 
@@ -35,15 +39,15 @@ const AboutSectionOne = () => {
               >
                 <div className="mx-[-12px] flex flex-wrap">
                   <div className="w-full px-3 sm:w-1/2 xl:w-full">
-                    <List text="Clean full UK driving licence." />
-                    <List text="UK Passport holder (Expiry: 2032)" />
-                    <List text="RTITB B1 forklift certification." />
+                    <List desc="Clean full UK driving licence." />
+                    <List desc="UK Passport holder (Expiry: 2032)" />
+                    <List desc="RTITB B1 forklift certification." />
                   </div>
 
                   <div className="w-full px-3 sm:w-1/2 xl:w-full">
-                    <List text="CSCS Card." />
-                    <List text="IPAF 3A/3B." />
-                    <List text="A level English and ICT, GCSEs." />
+                    <List desc="CSCS Card." />
+                    <List desc="IPAF 3A/3B." />
+                    <List desc="A level English and ICT, GCSEs." />
                   </div>
                 </div>
               </div>
