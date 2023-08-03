@@ -27,7 +27,7 @@ const Header = () => {
 
   // submenu handler
   const [openIndex, setOpenIndex] = useState(-1);
-  const handleSubmenu = (index) => {
+  const handleSubmenu = (index:number) => {
     if (openIndex === index) {
       setOpenIndex(-1);
     } else {
@@ -47,7 +47,7 @@ const Header = () => {
         <div className="container">
           <div className="relative -mx-4 flex items-center justify-between">
             <div className="w-60 max-w-full px-4 xl:mr-12">
-              <Link
+              {/* <Link
                 href="/"
                 className={`header-logo block w-full ${
                   sticky ? "py-5 lg:py-2" : "py-8"
@@ -67,7 +67,7 @@ const Header = () => {
                   height={30}
                   className="hidden w-full dark:block"
                 />
-              </Link>
+              </Link> */}
             </div>
             <div className="flex w-full items-center justify-between px-4">
               <div>
@@ -127,7 +127,7 @@ const Header = () => {
                                 </svg>
                               </span>
                             </a>
-                            <div
+                            {/* <div
                               className={`submenu relative top-full left-0 rounded-md bg-white transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark lg:invisible lg:absolute lg:top-[110%] lg:block lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${
                                 openIndex === index ? "block" : "hidden"
                               }`}
@@ -141,7 +141,7 @@ const Header = () => {
                                   {submenuItem.title}
                                 </Link>
                               ))}
-                            </div>
+                            </div> */}
                           </>
                         )}
                       </li>
