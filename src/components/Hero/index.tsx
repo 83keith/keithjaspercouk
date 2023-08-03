@@ -18,7 +18,7 @@ const Hero = () => {
                   Keith Jasper
                 </h1>
                 <p className="mb-12 text-base font-medium !leading-relaxed text-body-color dark:text-white dark:opacity-90 sm:text-lg md:text-xl">
-                  Delivering management of your infrastructure
+                  Maintaining systems according to your policies
                 </p>
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
