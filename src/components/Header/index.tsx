@@ -46,14 +46,15 @@ const Header = () => {
       >
         <div className="container">
           <div className="relative -mx-4 flex items-center justify-between">
-            <div className="w-60 max-w-full px-4 xl:mr-12">
-              {/* <Link
+            <div className="w-60 max-w-full px-4 xl:mr-12 logo">
+              <Link
                 href="/"
                 className={`header-logo block w-full ${
                   sticky ? "py-5 lg:py-2" : "py-8"
                 } `}
               >
-                <Image
+                {/* <h2 className="mb-4 text-3xl font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]">Keith Jasper</h2> */}
+                {/* <Image
                   src="/images/logo/logo-2.svg"
                   alt="logo"
                   width={140}
@@ -66,8 +67,8 @@ const Header = () => {
                   width={140}
                   height={30}
                   className="hidden w-full dark:block"
-                />
-              </Link> */}
+                /> */}
+              </Link>
             </div>
             <div className="flex w-full items-center justify-between px-4">
               <div>
