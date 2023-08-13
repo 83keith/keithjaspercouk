@@ -3,9 +3,17 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 
-#mkdir -p /home/ubuntu/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID
+rm -rf /home/ubuntu/autostage
+mkdir -p /home/ubuntu/autostage/deployment-archive
 
 cp -R /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive /home/ubuntu/autostage/
+cd /home/ubuntu/autostage/deployment-archive
+rm -rf package-lock.json
+rm -rf yarn.lock
+
+yarn install
+
+
 
 #
 
