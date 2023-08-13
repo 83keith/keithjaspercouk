@@ -1,5 +1,10 @@
 version: 0.0
 os: linux
+files:
+  destination: /home/ubuntu/stage/deployed
+permissions:
+  user: ubuntu
+  group: ubuntu
 hooks:
   ApplicationStart:
     - location: update.sh
