@@ -5,7 +5,7 @@ export NVM_DIR="$HOME/.nvm"
 
 #mkdir -p /home/ubuntu/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID
 
-cp -R /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_GROUP_ID/deployment-archive /home/ubuntu/autostage/
+cp -R /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive /home/ubuntu/autostage/
 
 #
 
