@@ -3,6 +3,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 
-npm run install
-npm run build
+yarn install
+yarn upgrade
+yarn build
+
 pm2 restart keithjaspercouk
