@@ -1,11 +1,7 @@
 version: 0.0
 os: linux
-permissions:
-  user: ubuntu
-  group: ubuntu
 hooks:
   ApplicationStart:
     - location: update.sh
       timeout: 300
       runas: ubuntu
-
