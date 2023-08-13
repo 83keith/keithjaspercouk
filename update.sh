@@ -12,6 +12,7 @@ rm -rf package-lock.json
 rm -rf yarn.lock
 
 yarn install
+yarn build
 
 
 

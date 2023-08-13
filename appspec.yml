@@ -3,5 +3,5 @@ os: linux
 hooks:
   ApplicationStart:
     - location: update.sh
-      timeout: 200
+      timeout: 300
       runas: ubuntu
