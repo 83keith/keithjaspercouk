@@ -4,6 +4,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 mkdir -p /home/ubuntu/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID
+#
 
 #yarn install
 #yarn upgrade
