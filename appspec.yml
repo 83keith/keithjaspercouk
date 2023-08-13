@@ -5,4 +5,3 @@ hooks:
     - location: update.sh
       timeout: 300
       runas: ubuntu
-#testing new permissions
