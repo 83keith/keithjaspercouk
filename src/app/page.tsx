@@ -76,7 +76,7 @@ fill="#FFF" stroke="none">
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
         <a
           href="/code"
-          className="red"
+          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300  hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
@@ -134,7 +134,7 @@ fill="#FFF" stroke="none">
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            How to get in contact with "The One"
+            How to get in contact with &quote;The One&quote;
           </p>
         </a>
       </div>
