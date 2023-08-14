@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import ThemeToggler from '@/components/header/themes-toggler';
+// import ThemeToggler from '@/components/header/themes-toggler';
 import Menu from '@/components/header/menu';
 import { menuData } from '@/data/menu';
 
@@ -25,12 +25,12 @@ const Header = () => {
     window.addEventListener('scroll', handleStickyNavbar);
   });
 
-  const MenuList = [
-    menuData.web,
-    menuData.illustration,
-    menuData.water,
-    menuData.about,
-  ];
+  // const MenuList = [
+  //   menuData.web,
+  //   menuData.illustration,
+  //   menuData.water,
+  //   menuData.about,
+  // ];
 
   return (
     <header
@@ -43,7 +43,7 @@ const Header = () => {
       <div
         className="relative z-40 mx-auto max-w-screen-2xl flex items-center justify-between px-6 py-2"
       >
-        <div className="flex gap-4 items-center">
+        {/* <div className="flex gap-4 items-center">
           <button
             className="flex flex-col align-items-center justify-center w-[36px] h-[36px] border border-primary dark:border-primary-dark text-[8px] font-medium uppercase"
             aria-label="Toggle menu"
@@ -53,8 +53,8 @@ const Header = () => {
           >
             {menuOpen ? ' Close' : 'Menu'}
           </button>
-          <ThemeToggler />
-        </div>
+          <ThemeToggler /> 
+        </div> */}
         <Link
           href="/"
           className="absolute left-2/4 -translate-x-2/4"
@@ -63,7 +63,7 @@ const Header = () => {
           Keith Jasper
         </Link>
 
-        <div
+        {/* <div
           className="flex gap-4 border text-primary-light hover:text-red-700"
           onClick={handleCloseMenu}
         >
@@ -72,9 +72,9 @@ const Header = () => {
               {item.name}
             </Link>
           ))}
-        </div>
+        </div> */}
       </div>
-      <Menu open={menuOpen} handleCloseMenu={handleCloseMenu} />
+      {/* <Menu open={menuOpen} handleCloseMenu={handleCloseMenu} /> */}
     </header>
   );
 };
