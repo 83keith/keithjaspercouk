@@ -13,6 +13,7 @@ rm -rf yarn.lock
 
 yarn install
 yarn build
+pm2 restart keithjaspercouk
 
 
 
@@ -22,5 +23,4 @@ yarn build
 #yarn upgrade
 #yarn build#
 
-#pm2 restart keithjaspercouk
 
