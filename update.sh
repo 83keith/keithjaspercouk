@@ -7,7 +7,8 @@ rm -rf /home/ubuntu/autostage/*
 rm -rf /home/ubuntu/autostage/.*
 rm -rf /home/ubuntu/autostage
 mkdir -p /home/ubuntu/autostage/deployment-archive/
-
+echo $DEPLOYMENT_GROUP_ID
+echo $DEPLOYMENT_ID
 cp -R /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive/* /home/ubuntu/autostage/
 cp -R /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive/.* /home/ubuntu/autostage/
 
