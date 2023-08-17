@@ -10,8 +10,12 @@ cp -R /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/
 cd /home/ubuntu/autostage/deployment-archive
 
 
+rm -rf /var/www/html/*
+rm -rf /var/www/html/.*
 
-
+cp /home/ubuntu/autostage/deployment-archive/.* . -R
+cp /home/ubuntu/autostage/deployment-archive/* . -R
+chmod 777 /var/www/html/includes/smarty/
 
 #yarn install
 #yarn upgrade
