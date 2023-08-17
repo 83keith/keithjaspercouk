@@ -29,11 +29,12 @@ if (isset($_GET['page'])) {
 
 
 $nav = generateNavigation();
-if (isset($_GET['page']) && !array_search($_GET['page'], $nav)) {
-    http_response_code(404);
-        $smarty->display("404.tpl");
-    return;
-}
+// var_dump(array_search($_GET['page'], array_column($nav, $_GET['page'])));
+// if (isset($_GET['page']) && array_search($_GET['page'], $nav, ) !== false) {
+//     http_response_code(404);
+//         $smarty->display("404.tpl");
+//     return;
+// }
 $smarty->assign("navigation_array", $nav);
 if (isset($_GET['page'])) {
     foreach ($nav as $value) {
