@@ -147,10 +147,12 @@ main {
     color: #212529;
     padding-right: 10px;
     border-bottom: 1px solid;
+    padding-top: 7px;
 }
 
 #top-bar h1 {
     text-shadow: 1px 1px #4d4d4d;
+    font-size: larger;
 }
 
 code {
@@ -160,4 +162,48 @@ code {
     display: block;
     width: 75vw;
     margin-left: 50px;
+}
+
+.section {
+    position: relative;
+    left: calc(10%);
+    max-width: 80%;
+}
+
+.section p {
+    color: #212529;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.section h2 {
+    text-align: center;
+}
+
+.section h3 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.section ul {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.section ul li {
+    list-style: none;
+    padding-left: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    border-top: 1px solid rgba(255, 255, 255, 0);
+}
+
+.section ul li:hover {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.e404 {
+    text-align: center;
 }
