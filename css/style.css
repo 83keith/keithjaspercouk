@@ -197,6 +197,7 @@ code {
     padding-left: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0);
     border-top: 1px solid rgba(255, 255, 255, 0);
+    color: black;
 }
 
 .section ul li:hover {
