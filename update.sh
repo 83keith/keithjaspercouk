@@ -17,6 +17,7 @@ cd /home/ubuntu/autostage/deployment-archive
 rm -rf /var/www/html/*
 
 cp /home/ubuntu/autostage/deployment-archive/* /var/www/html/ -R
+cp /home/ubuntu/autostage/deployment-archive/.htaccess /var/www/html/
 chmod 777 /var/www/html/includes/smarty/
 
 #yarn install
