@@ -13,8 +13,6 @@ cd /home/ubuntu/autostage/deployment-archive
 
 
 
-#
-
 #yarn install
 #yarn upgrade
 #yarn build#
