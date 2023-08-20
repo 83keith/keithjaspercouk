@@ -8,6 +8,7 @@
     <link href="/css/style.css" rel="stylesheet" crossorigin="anonymous">
 
 </head>
+{script}
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G3QW29QDS4"></script>
 <script>
@@ -17,6 +18,7 @@
 
     gtag('config', 'G-G3QW29QDS4');
 </script>
+{/script}
 
 <body>
 <main>
