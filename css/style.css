@@ -208,3 +208,14 @@ code {
 .e404 {
     text-align: center;
 }
+
+.footer{
+    display:flex;
+    justify-content: space-between;
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    background-color: rgba(33, 37, 41, 1);
+    padding:10px 20px;
+}
