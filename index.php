@@ -94,6 +94,7 @@ if (!isset($_GET['API'])) {
         } else {
             curl_setopt($curlSession, CURLOPT_URL, 'http://keithjasper.co.uk/?API=serverstats');
         }
+        curl_setopt($curlSession, CURLOPT_CRLF, true);
         curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
         try {
             $data = curl_exec($curlSession);
