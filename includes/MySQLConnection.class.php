@@ -10,7 +10,13 @@ class MySQLConnection {
 	public $query_count = 0;
 
 	public function __construct($dbhost = 'localhost', $dbuser = 'root', $dbpass = '', $dbname = '', $charset = 'utf8') {
+		try {
 		$this->connection = new \mysqli($dbhost, $dbuser, $dbpass, $dbname);
+		} catch (\Exception $e) {
+			var_dump($e);
+			print "<br />Database connection using Mysqli failed;";
+			exit();
+		}
 		if ($this->connection->connect_error) {
 			$this->error('Failed to connect to MySQL - ' . $this->connection->connect_error);
 		}
