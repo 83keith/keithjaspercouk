@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Keith Jasper</title>
     <link href="/css/style.css" rel="stylesheet" crossorigin="anonymous">
-
+    <script src="/js/echarts.js"></script>
+    <script src="/js/dark.js"></script>
 </head>
 {literal}
 
@@ -20,6 +21,7 @@
         gtag('config', 'G-G3QW29QDS4');
     </script>
 {/literal}
+
 
 <body>
 <main>

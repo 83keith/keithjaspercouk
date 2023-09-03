@@ -1,4 +1,4 @@
-        <div id="sidebar" class="sidebar">
+        <header id="sidebar" class="sidebar">
             <h1>Keith Jasper</h1>
             <ul>
                 {foreach from=$navigation_array key=name item=value}
@@ -9,7 +9,7 @@
                     {else}
                         <li>
                         <a href="{$value.href}">
-                            {$value.icon}
+                        <i class="fa-solid {$value.icon} fa-lg"></i>
                             {$value.name}
                         </a>
                     </li>
@@ -17,4 +17,4 @@
 
                 {/foreach}
             </ul>
-</div>
+</header>

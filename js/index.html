@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ECharts</title>
+    <!-- Include the ECharts file you just downloaded -->
+    <script src="echarts.js"></script>
+  </head>
+  <body>
+    <!-- Prepare a DOM with a defined width and height for ECharts -->
+    <div id="main" style="width: 600px; height: 400px"></div>
+    <script type="text/javascript">
+      var dynamo = [
+        {
+          dataUP: 136787.0,
+          timeStamp: "2023-09-03T10:08:33.853569",
+          dataDOWN: 130430.0,
+        },
+        {
+          dataUP: 30521.0,
+          timeStamp: "2023-09-03T10:23:34.448470",
+          dataDOWN: 23173.0,
+        },
+        {
+          dataUP: 590475.0,
+          timeStamp: "2023-09-03T09:58:33.398267",
+          dataDOWN: 178087.0,
+        },
+        {
+          dataUP: 150021.0,
+          timeStamp: "2023-09-03T10:13:34.047986",
+          dataDOWN: 111570.0,
+        },
+        {
+          dataUP: 37137.0,
+          timeStamp: "2023-09-03T10:18:34.244733",
+          dataDOWN: 32672.0,
+        },
+        {
+          dataUP: 1030827.0,
+          timeStamp: "2023-09-03T10:03:33.647323",
+          dataDOWN: 15935378.0,
+        },
+      ];
+
+      console.log(dynamo);
+      var timestamps = new Array;
+      var dataUP = new Array;
+      var dataDOWN = new Array;
+      for (i = 0; i < dynamo.length; i++) {
+        timestamps.push(new Date(dynamo[i]['timeStamp']).toISOString().split('T')[0]);
+        dataUP.push(new Number(dynamo[i]["dataUP"] / 1024).toFixed(2));
+        dataDOWN.push(new Number(dynamo[i]["dataDOWN"] / 1024).toFixed(2));
+      }
+    </script>
+
+    <script type="text/javascript">
+      //TODO Extrct DATA from awsfunctions and translate to echart usingPHP
+      // Initialize the echarts instance based on the prepared dom
+      var myChart = echarts.init(document.getElementById("main"));
+
+      // Specify the configuration items and data for the chart
+      var option = (option = {
+        title: {
+          text: "Stacked Line",
+        },
+        tooltip: {
+          trigger: "axis",
+        },
+        legend: {
+          data: ["Data Out (Kb)", "Data In (Kb)"],
+        },
+        grid: {
+          left: "3%",
+          right: "4%",
+          bottom: "3%",
+          containLabel: true,
+        },
+        toolbox: {
+          feature: {
+            saveAsImage: {},
+          },
+        },
+        xAxis: {
+          type: "category",
+          boundaryGap: false,
+          data: timestamps,
+        },
+        yAxis: {
+          type: "value",
+        },
+        series: [
+          {
+            name: "Data Out (Kb)",
+            type: "line",
+            stack: "Total",
+            data: dataUP,
+          },
+          {
+            name: "Data In (Kb)",
+            type: "line",
+            stack: "Total",
+            data: dataDOWN,
+          },
+        ],
+      });
+
+      // Display the chart using the configuration items and data just specified.
+      myChart.setOption(option);
+    </script>
+  </body>
+</html>
