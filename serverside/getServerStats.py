@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+"""
+DEPRECATED
+"""
+
 import boto3
 import json
 import datetime

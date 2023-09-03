@@ -126,8 +126,9 @@ if (!isset($_GET['API'])) {
     $caselogic = strtolower($_GET['API']);
     switch ($caselogic) {
         case "serverstats":
-            require_once('includes/aws-functions.php');
-            $data = new DynamoDB();
-            echo $data->queryDynamoDB();
+            require_once('includes/MySQLConnection.class.php');
+            $db = new MySQLConnection(DATABASE_HOST, DATABASE_USER, DATABASE_PASS, DATABASE_NAME);
+            $data = $db->query("SELECT * from networkusage WHERE timeStamp <= NOW() and timestamp  >= NOW() - INTERVAL 1 WEEK;")->fetchAll();
+            echo json_encode($data);
     }
 }

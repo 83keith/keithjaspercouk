@@ -5,16 +5,13 @@
 
         var dynamo = {/literal}{$GraphData}{literal};
 
-        dynamo.sort(GetSortOrder("id"));
         var timestamps = new Array;
         var dataUP = new Array;
         var dataDOWN = new Array;
-        var timestampFull = new Array;
         for (i = 0; i < dynamo.length; i++) {
-            timestampFull.push(new Date(dynamo[i]['timeStamp']).toISOString());
-            timestamps.push(new Date(dynamo[i]['timeStamp']).toISOString().split('T')[1]);
-            dataUP.push(new Number(dynamo[i]["dataUP"] / 1024).toFixed(2));
-            dataDOWN.push(new Number(dynamo[i]["dataDOWN"] / 1024).toFixed(2));
+            timestamps.push(dynamo[i]['timeStamp']);
+            dataUP.push(new Number(dynamo[i]["up"] / 1024).toFixed(2));
+            dataDOWN.push(new Number(dynamo[i]["down"] / 1024).toFixed(2));
         }
     {/literal}
 </script>

@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
-
-
 import psutil
 import time
-import boto3
-import datetime
-
+import mysql.connector
 UPDATE_DELAY = 300  # in seconds
-
 
 def get_size(bytes):
     """
@@ -18,24 +13,18 @@ def get_size(bytes):
             return f"{bytes:.2f}{unit}B"
         bytes /= 1024
 
-
-
-dynamodb = boto3.resource('dynamodb', region_name='eu-north-1')
-#def lambda_handler(event, context):
-table = dynamodb.Table('networkUsage')
-
-
-
         # get the network I/O stats from psutil
 io = psutil.net_io_counters()
 # extract the total bytes sent and received
 bytes_sent, bytes_recv = io.bytes_sent, io.bytes_recv
 while True:
-    # sleep for `UPDATE_DELAY` seconds
-    time.sleep(UPDATE_DELAY)
-    now = datetime.datetime.now()
-    timeStamp = now.isoformat()
-
+    mydb = mysql.connector.connect(
+            host="localhost",
+            user="keithjaspercouk",
+            password="keith",
+            database="keithjaspercouk"
+            )
+    dblink = mydb.cursor()
 
     # get the stats again
     io_2 = psutil.net_io_counters()
@@ -48,13 +37,11 @@ while True:
           f", Last 10 Seconds (Down): {get_size(ds)}      ", end="\r\n")
     # update the bytes_sent and bytes_recv for next iteration
     bytes_sent, bytes_recv = io_2.bytes_sent, io_2.bytes_recv
-    response = table.put_item(
-            Item={
-                'timeStamp': timeStamp,
-                'dataUP' : us,
-                'dataDOWN': ds
-                }
-            )
-    status_code = response['ResponseMetadata']['HTTPStatusCode']
-    print(status_code)
 
+    sql = "INSERT INTO networkusage (up, down) VALUES (%s, %s)"
+    val = (us, ds)
+    dblink.execute(sql, val)
+    mydb.commit()
+    dblink.close()
+    mydb.close()
+    time.sleep(UPDATE_DELAY)
