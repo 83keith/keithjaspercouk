@@ -9,7 +9,7 @@
         var dataUP = new Array;
         var dataDOWN = new Array;
         for (i = 0; i < dynamo.length; i++) {
-            timestamps.push(new Date(dynamo[i]['timeStamp']).toISOString().split('T')[0]);
+            timestamps.push(new Date(dynamo[i]['timeStamp']).toISOString().split('T')[1]);
             dataUP.push(new Number(dynamo[i]["dataUP"] / 1024).toFixed(2));
             dataDOWN.push(new Number(dynamo[i]["dataDOWN"] / 1024).toFixed(2));
         }
