@@ -7,9 +7,13 @@ use keithjaspercouk\MySQLConnection\MySQLConnection;
 //FIXME: change include/require to autoloader
 require_once('includes/Configuration.class.php');
 require_once('includes/MySQLConnection.class.php');
-
+try {
 $data = new MySQLConnection(DATABASE_HOST, DATABASE_USER, DATABASE_PASS, DATABASE_NAME);
-
+} catch (Exception $e) {
+    var_dump($e);
+    print "<br/> Database connection failed";
+    exit();
+}
 
 // TODO: handle index.php better
 // try using case statements to separte the if's
