@@ -90,7 +90,7 @@ if (!isset($_GET['API'])) {
     if (isset($_GET['page']) && $_GET['page'] == 'graph') {
         $curlSession = curl_init();
         if (isDevEnvironment()) {
-            curl_setopt($curlSession, CURLOPT_URL, 'http://localhost/?API=serverstats&test=a');
+            curl_setopt($curlSession, CURLOPT_URL, 'http://localhost/?API=serverstats');
         } else {
             curl_setopt($curlSession, CURLOPT_URL, 'http://keithjasper.co.uk/?API=serverstats');
         }
@@ -100,7 +100,7 @@ if (!isset($_GET['API'])) {
             if (isDevEnvironment()) {
                 $data = curl_exec($curlSession);
             } else {
-                $data = json_decode(curl_exec($curlSession));
+                $data = curl_exec($curlSession);
             }
             //$data = str_replace(array('\\n', '\\'), '', $data);
         } catch (Exception $e) {
