@@ -17,7 +17,7 @@ attr = boto3.dynamodb.conditions.Attr('timeStamp')
 
 now = datetime.datetime.now()
 nowhr = now.isoformat()
-threehours = now - datetime.timedelta(minutes = 30)
+threehours = now - datetime.timedelta(minutes = 1440)
 threehourshr = threehours.isoformat()
 
 #print (now, threehours)

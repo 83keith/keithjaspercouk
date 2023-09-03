@@ -4,7 +4,7 @@
     {literal}
 
         var dynamo = {/literal}{$GraphData}{literal}
-
+            
         var timestamps = new Array;
         var dataUP = new Array;
         var dataDOWN = new Array;
@@ -48,6 +48,9 @@
                 type: "category",
                 boundaryGap: false,
                 data: timestamps,
+                axisLabel: {
+                    rotate: 45,
+                }
             },
             yAxis: {
                 type: "value",
