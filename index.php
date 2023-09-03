@@ -97,7 +97,7 @@ if (!isset($_GET['API'])) {
         curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
         try {
             $data = curl_exec($curlSession);
-            $data = str_replace(["\r\n", "\n", "\r"], $data, '');
+            $data = str_replace('\n', '', $data);
         } catch (Exception $e) {
             var_dump($e);
         }
