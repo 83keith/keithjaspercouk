@@ -8,7 +8,7 @@ use keithjaspercouk\MySQLConnection\MySQLConnection;
 require_once('includes/Configuration.class.php');
 require_once('includes/MySQLConnection.class.php');
 try {
-$data = new MySQLConnection(DATABASE_HOST, DATABASE_USER, DATABASE_PASS, DATABASE_NAME);
+    $data = new MySQLConnection(DATABASE_HOST, DATABASE_USER, DATABASE_PASS, DATABASE_NAME);
 } catch (Exception $e) {
     var_dump($e);
     print "<br/> Database connection failed";
@@ -89,7 +89,11 @@ if (!isset($_GET['API'])) {
     // Download Graph data
     if (isset($_GET['page']) && $_GET['page'] == 'graph') {
         $curlSession = curl_init();
-        curl_setopt($curlSession, CURLOPT_URL, 'http://localhost/?API=serverstats');
+        if (isDevEnvironment()) {
+            curl_setopt($curlSession, CURLOPT_URL, 'http://localhost/?API=serverstats');
+        } else {
+            curl_setopt($curlSession, CURLOPT_URL, 'http://keithjasper.co.uk/?API=serverstats');
+        }
         curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
         try {
             $data = curl_exec($curlSession);
