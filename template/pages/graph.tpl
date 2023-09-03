@@ -4,7 +4,7 @@
     {literal}
 
         var dynamo = {/literal}{$GraphData}{literal}
-            
+
         var timestamps = new Array;
         var dataUP = new Array;
         var dataDOWN = new Array;
@@ -68,6 +68,7 @@
                     data: dataDOWN,
                 },
             ],
+            backgroundColor: 'transparent',
         });
         // Display the chart using the configuration items and data just specified.
         myChart.setOption(option);

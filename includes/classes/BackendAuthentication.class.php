@@ -30,7 +30,7 @@ class BackendAuthentication
     public function BackendLoginForm()
     {
         if (isset($_POST['password'])) {
-            if ($this->password === $_POST['password']) {
+            if ($this->password == $_POST['password']) {
                 $_SESSION['loggedin'] = true;
                 header("Location: ./");
             } else {

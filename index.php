@@ -98,11 +98,10 @@ if (!isset($_GET['API'])) {
         curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
         try {
             if (isDevEnvironment()) {
-            $data = curl_exec($curlSession);
+                $data = curl_exec($curlSession);
             } else {
-            $data = json_decode(curl_exec($curlSession));
-
-        }
+                $data = json_decode(curl_exec($curlSession));
+            }
             //$data = str_replace(array('\\n', '\\'), '', $data);
         } catch (Exception $e) {
             var_dump($e);
